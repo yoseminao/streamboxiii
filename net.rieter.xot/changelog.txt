@@ -1,0 +1,17 @@
+﻿[B]Retrospect v4.1.6 - Changelog - 2017-06-23[/B]
+
+[B]Framework related[/B]
+* Added: Option to get audio streams from M3u8 (See #880)
+* Fixed: initial deployments failed due to missing user settings.xml
+
+[B]GUI/Settings/Language related[/B]
+* Fixed: settings of type="hidden" do not exist
+* Updated: Swedish language (Fixes #874)
+* Added: option to hide channel initialisation messages
+
+[B]Channel related[/B]
+* Fixed: no audio on VRT.nu streams (Fixes #880)
+* Fixed: MTV moved to new API (Fixes #876)
+* Fixed: Kijk.nl moved to a JSON API (Fixes #875)
+
+

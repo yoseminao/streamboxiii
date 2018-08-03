@@ -1,0 +1,13 @@
+[B]Version 1.1.5[/B]
+- TV Menu : TV RTL not starting issue.
+
+[B]Version 1.1.4[/B]
+- Settings Menu : Menu select bug fix.
+- Update System : Update backend server change.
+- Update Loader : improved speed. and removed manual reboot.
+
+[B]Version 1.1.0[/B]
+- Skin Update to new version
+
+[B]Version 1.0.0[/B]
+- Initial version

@@ -1,0 +1,7 @@
+- 1.2.0
+New repostory STABLE release.
+- 1.1.0 
+Fix repostory file checkup issue
+
+- 1.0.0 
+Launch of repostory ZiiCreater
