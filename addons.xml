@@ -444,22 +444,6 @@
 </extension>
 </addon>
 
-<addon id="plugin.video.sportsdevil.launcher" name="SportsDevil Launcher" version="0.2.1" provider-name="noobsandnerds">
-  <requires>
-    <import addon="xbmc.python" version="2.1.0"/>
-    <import addon="script.module.addon.common" version="2.0.0"/>
-  </requires>
-  <extension point="xbmc.python.pluginsource" library="default.py">
-        <provides>video</provides>
-  </extension>
-  <extension point="xbmc.addon.metadata">
-    <summary lang="en">SportsDevil REFRESH</summary>
-    <description lang="en">This will install the latest versions of SportsDevil and clean any old data that may be stopping the addon from opening certain pages. As SportsDevil has no official repository different people have taken it upon themselves to upload newer versions of the addon to their repo's. Due to this there is always a chance an update may break a previously working version so this addon stores a backup of your existing SportsDevil so you can always revert back if needed.</description>
-    <platform>all</platform>
-    <broken>Check Add-on Portal for latest versions of SD, as of July 2017 nobody seems to be maintaining SportsDevil but have a google and you may be lucky and find a working version.</broken>
-  </extension>
-</addon>
-
 <addon id="repository.dss" name="Dutch Sport Streams" version="1.1" provider-name="Beta-Team">
 	<extension point="xbmc.addon.repository" name="Dutch Sport Streams Repository">
 		<info compressed="true">https://raw.githubusercontent.com/dutchsportstreams/DSS/master/addons.xml</info>
@@ -471,6 +455,20 @@
 		<description>Download and install addons from Dutch Sport Streams</description>
 		<platform>all</platform>
 	</extension>
+</addon>
+
+<addon id="repository.kodil" name=".[COLOR blue].Kodil [/COLOR][COLOR white] Repository [/COLOR]" version="1.3" provider-name="kodil">
+    <extension point="xbmc.addon.repository" name=".Kodil  Repository ">
+        <info compressed="false">https://raw.githubusercontent.com/kodil/kodil/master/addons.xml</info>
+        <checksum>https://raw.githubusercontent.com/kodil/kodil/master/addons.xml.md5</checksum>
+        <datadir zip="true">https://raw.githubusercontent.com/kodil/kodil/master/repo</datadir>
+    </extension>
+    <extension point="xbmc.addon.metadata">
+        <summary>kodisrael repository</summary>
+        <description>kodil repository - the most extensive repository in isrl </description>
+        <description>הריפו של קודישראל - מאגר ההרחבות הגדול והאיכותי בישראל  </description>
+        <platform>all</platform>
+    </extension>
 </addon>
 
 <addon id="repository.ziicreater" name="STREAMBOXIII (ZiiCreater.com)" version="1.5.0" provider-name="ZiiCreater.com">
