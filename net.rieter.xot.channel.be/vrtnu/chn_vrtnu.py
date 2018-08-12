@@ -13,6 +13,7 @@ from vault import Vault
 from helpers.datehelper import DateHelper
 from helpers.languagehelper import LanguageHelper
 from textures import TextureHandler
+from helpers.subtitlehelper import SubtitleHelper
 
 
 class Channel(chn_class.Channel):
@@ -85,10 +86,10 @@ class Channel(chn_class.Channel):
         self._AddDataParser("*", name="Folder/Season parser",
                             parser=folderRegex, creator=self.CreateFolderItem)
 
-        videoRegex = '<a[^>]+href="(?<url>/vrtnu[^"]+)"[^>]*>\W*<div[^>]*>\W*<h2[^>]*>\s*' \
-                     '(?<subtitle>[^<]+)\s*</h2>\W*<p[^>]*>\W*(?:<span[^>]*>\s*' \
-                     '(?<title>[^|]+) \|\s*</span>\W*<span[^>]+>[^<]*</span>){0,1}\s*' \
-                     '(?<description>[^|]+) \|\W+\d+ ?<abbr[\w\W]{0,500}<source srcset="[^"]+' \
+        videoRegex = '<a[^>]+href="(?<url>/vrtnu/(?:[^/]+/){2}[^/]*?(?<year>\d*)/[^"]+)"[^>]*>\W*' \
+                     '<div[^>]*>\W*<h2[^>]*>\s*(?<title>[^<]+)\s*</h2>\W*<p[^>]*>\W*(?:<span[^>]*' \
+                     'class="vrtnu-list--item-meta[^>]*>\W*(?<day>\d+)/(?<month>\d+)[^<]*</span>' \
+                     '\W*<span[^>]+>[^<]*</span>|)[^<]*<abbr[\w\W]{0,1000}?<source srcset="[^"]+' \
                      '(?<thumburl>//[^ ]+)'
         # No need for a subtitle for now as it only includes the textual date
         videoRegex = Regexer.FromExpresso(videoRegex)
@@ -361,7 +362,7 @@ class Channel(chn_class.Channel):
         if item is None:
             return None
 
-        if "day" in resultSet and resultSet["day"]:
+        if "day" in resultSet and resultSet["day"] and len(resultSet.get("year", "")) == 4:
             item.SetDate(resultSet["year"] or DateHelper.ThisYear(), resultSet["month"], resultSet["day"])
 
         if item.thumb.startswith("//"):
@@ -409,8 +410,17 @@ class Channel(chn_class.Channel):
                 url = "%s/%s" % ("https://ondemand-vrt.akamaized.net", url.split("/", 3)[-1])
 
             if adaptiveAvailable:
+                if not AddonSettings.IsMinVersion(18) and streamData["type"] == "HLS":
+                    # Get the subs from HLS
+                    Logger.Debug("Using subs from HLS for Kodi <18")
+                    srt = M3u8.GetSubtitle(url, proxy=self.proxy)
+                    if srt:
+                        srt = srt.replace(".m3u8", ".vtt")
+                        part.Subtitle = SubtitleHelper.DownloadSubtitle(srt, format="webvtt")
+
                 if streamData["type"] != "MPEG_DASH":
                     continue
+
                 stream = part.AppendMediaStream(url, 0)
                 Mpd.SetInputStreamAddonInput(stream, self.proxy)
                 item.complete = True
@@ -418,7 +428,9 @@ class Channel(chn_class.Channel):
             if streamData["type"] != "HLS":
                 continue
 
-            for s, b, a in M3u8.GetStreamsFromM3u8(url, self.proxy, mapAudio=True):
+            m3u8Data = UriHandler.Open(url, self.proxy)
+            for s, b, a in \
+                    M3u8.GetStreamsFromM3u8(url, self.proxy, playListData=m3u8Data, mapAudio=True):
                 item.complete = True
                 if a:
                     audioPart = a.rsplit("-", 1)[-1]
@@ -426,6 +438,13 @@ class Channel(chn_class.Channel):
                     s = s.replace(".m3u8", audioPart)
                 # s = self.GetVerifiableVideoUrl(s)
                 part.AppendMediaStream(s, b)
+
+            srt = M3u8.GetSubtitle(url, playListData=m3u8Data, proxy=self.proxy)
+            if not srt:
+                continue
+
+            srt = srt.replace(".m3u8", ".vtt")
+            part.Subtitle = SubtitleHelper.DownloadSubtitle(srt, format="webvtt")
         return item
 
     def __ExtractSessionData(self, logonData):
