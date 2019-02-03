@@ -131,7 +131,7 @@
         <description lang="en">Retrospect uses the official websites of a lot of different broadcasting companies (mainly Dutch, Belgian, British and Swedish) to make their re-run episodes available on the Kodi platform. More information can be found at www.rieter.net.[CR][CR]Retrospect reports back usage statistics to our servers. This option can be disabled from the add-on settings.</description>
         <disclaimer lang="en">Retrospect is provided as is. We do not take any responsibility for possible (but highly unlikely) damage cause to your system. Nor do we take responsibility for the content that can be watched via this add-on.</disclaimer>
         <language>en nl de se no lt lv fi</language>
-        <news>[B]Retrospect v4.1.7.46 - Changelog - 2019-01-28[/B]
+        <news>[B]Retrospect v4.1.7.47 - Changelog - 2019-01-29[/B]
 
 [B]Framework related[/B]
 * Fixed: On video playback error the busy dialog would not close and Kodi would wait for ever for Retrospect to finish (Fixes #1096)
@@ -141,6 +141,7 @@
 -
 
 [B]Channel related[/B]
+* Fixed: TV4 thumbs not showing (Fixes #1097)
 * Fixed: issue with AWS timestamp not being in English (Fixes #1094)
 
         </news>
@@ -148,6 +149,312 @@
             <icon>icon.png</icon>
             <fanart>fanart.jpg</fanart>
         </assets>
+    </extension>
+</addon>
+
+<addon id="net.rieter.xot.channel.be"
+       version="4.1.7.27"
+       name="Retrospect Belgium Channels"
+       provider-name="Bas Rieter">
+
+    <!--requires-->
+        <!--import addon="net.rieter.xot" version="x.x.x" optional="false" /-->
+    <!--/requires-->
+
+    <extension point="xbmc.python.pluginsource"
+               library="">
+        <!--provides>video</provides-->
+    </extension>
+
+    <extension point="xbmc.addon.metadata">
+        <summary lang="en">Retrospect (a.k.a. XBMC Online TV) is an add-on that allows the playback of a lot of TV shows that are available (legally) via the broadcasters websites.</summary>
+        <description lang="en">Set of Belgium channels for Retrospect</description>
+        <disclaimer lang="en">Retrospect is provided as is. We do not take any responsibility for possible (but highly unlikely) damage cause to your system. Nor do we take responsibility for the content that can be watched via this add-on.</disclaimer>
+    </extension>
+</addon>
+
+<addon id="net.rieter.xot.channel.de"
+       version="4.1.7.0"
+       name="Retrospect German/Swiss/Austrian Channels"
+       provider-name="Bas Rieter">
+
+    <!--<requires>-->
+        <!--import addon="net.rieter.xot" version="x.x.x" optional="false" /-->
+    <!--</requires>-->
+
+    <extension point="xbmc.python.pluginsource"
+               library="">
+        <!--provides>video</provides-->
+    </extension>
+
+    <extension point="xbmc.addon.metadata">
+        <summary lang="en">Retrospect (a.k.a. XBMC Online TV) is an add-on that allows the playback of a lot of TV shows that are available (legally) via the broadcasters websites.</summary>
+        <description lang="en">Set of several video websites channels for Retrospect</description>
+        <disclaimer lang="en">Retrospect is provided as is. We do not take any responsibility for possible (but highly unlikely) damage cause to your system. Nor do we take responsibility for the content that can be watched via this add-on.</disclaimer>
+        <language>de</language>
+    </extension>
+</addon>
+
+<addon id="net.rieter.xot.channel.mtg"
+       version="4.1.7.7"
+       name="Retrospect Modern Time Group (Swedish, Lithuanian and Latvian) Channels"
+       provider-name="Bas Rieter">
+
+    <!--<requires>-->
+        <!--import addon="net.rieter.xot" version="x.x.x" optional="false" /-->
+    <!--</requires>-->
+
+    <extension point="xbmc.python.pluginsource"
+               library="">
+        <!--provides>video</provides-->
+    </extension>
+
+    <extension point="xbmc.addon.metadata">
+        <summary lang="en">Retrospect (a.k.a. XBMC Online TV) is an add-on that allows the playback of a lot of TV shows that are available (legally) via the broadcasters websites.</summary>
+        <description lang="en">Set of Swedish, Latvian and Lithuanian channels for Retrospect: TV3, TV6, TV8 and Viasat4.</description>
+        <disclaimer lang="en">Retrospect is provided as is. We do not take any responsibility for possible (but highly unlikely) damage cause to your system. Nor do we take responsibility for the content that can be watched via this add-on.</disclaimer>
+        <language>se lt lv no</language>
+    </extension>
+</addon>
+
+<addon id="net.rieter.xot.channel.mtv"
+       version="4.1.7.0"
+       name="Retrospect MTV Channels"
+       provider-name="Bas Rieter">
+
+    <!--requires-->
+        <!--import addon="net.rieter.xot" version="x.x.x" optional="false" /-->
+    <!--/requires-->
+
+    <extension point="xbmc.python.pluginsource"
+             library="">
+        <!--provides>video</provides-->
+    </extension>
+
+    <extension point="xbmc.addon.metadata">
+        <summary lang="en">Retrospect (a.k.a. XBMC Online TV) is an add-on that allows the playback of a lot of TV shows that are available (legally) via the broadcasters websites.</summary>
+        <description lang="en">Set of MTV related channels for Retrospect (MTV.nl, MTV.de, Southpark.nl).</description>
+        <disclaimer lang="en">Retrospect is provided as is. We do not take any responsibility for possible (but highly unlikely) damage cause to your system. Nor do we take responsibility for the content that can be watched via this add-on.</disclaimer>
+        <language>en de</language>
+    </extension>
+</addon>
+
+<addon id="net.rieter.xot.channel.nick"
+       version="4.1.7.2"
+       name="Retrospect Nickelodeon Channels"
+       provider-name="Bas Rieter">
+
+    <!--requires-->
+        <!--import addon="net.rieter.xot" version="x.x.x" optional="false" /-->
+    <!--/requires-->
+
+    <extension point="xbmc.python.pluginsource"
+               library="">
+        <!--provides>video</provides-->
+    </extension>
+
+    <extension point="xbmc.addon.metadata">
+        <summary lang="en">Retrospect (a.k.a. XBMC Online TV) is an add-on that allows the playback of a lot of TV shows that are available (legally) via the broadcasters websites.</summary>
+        <description lang="en">Set of Nickelodeon channels for Retrospect</description>
+        <disclaimer lang="en">Retrospect is provided as is. We do not take any responsibility for possible (but highly unlikely) damage cause to your system. Nor do we take responsibility for the content that can be watched via this add-on.</disclaimer>
+        <language>nl se no</language>
+    </extension>
+</addon>
+
+<addon id="net.rieter.xot.channel.no"
+       version="4.1.7.5"
+       name="Retrospect Norwegian Channels"
+       provider-name="Bas Rieter">
+
+    <!--requires-->
+        <!--import addon="net.rieter.xot" version="x.x.x" optional="false" /-->
+    <!--/requires-->
+
+    <extension point="xbmc.python.pluginsource"
+               library="">
+        <!--provides>video</provides-->
+    </extension>
+
+    <extension point="xbmc.addon.metadata">
+        <summary lang="en">Retrospect (a.k.a. XBMC Online TV) is an add-on that allows the playback of a lot of TV shows that are available (legally) via the broadcasters websites.</summary>
+        <description lang="en">Set of Norwegian channels for Retrospect</description>
+        <disclaimer lang="en">Retrospect is provided as is. We do not take any responsibility for possible (but highly unlikely) damage cause to your system. Nor do we take responsibility for the content that can be watched via this add-on.</disclaimer>
+        <language>no</language>
+    </extension>
+</addon>
+
+<addon id="net.rieter.xot.channel.nos"
+       version="4.1.7.18"
+       name="Retrospect Dutch NOS Channels"
+       provider-name="Bas Rieter">
+
+    <!--requires-->
+        <!--import addon="net.rieter.xot" version="x.x.x" optional="false" /-->
+    <!--/requires-->
+
+    <extension point="xbmc.python.pluginsource"
+               library="">
+        <!--provides>video</provides-->
+    </extension>
+
+    <extension point="xbmc.addon.metadata">
+        <summary lang="en">Retrospect (a.k.a. XBMC Online TV) is an add-on that allows the playback of a lot of TV shows that are available (legally) via the broadcasters websites.</summary>
+        <description lang="en">Set of NOS related channels for Retrospect. Nederland 1, 2, 3, Z@pp and the new NOS beta channel.</description>
+        <disclaimer lang="en">Retrospect is provided as is. We do not take any responsibility for possible (but highly unlikely) damage cause to your system. Nor do we take responsibility for the content that can be watched via this add-on.</disclaimer>
+        <language>nl</language>
+    </extension>
+</addon>
+
+<addon id="net.rieter.xot.channel.regionalnl"
+       version="4.1.7.6"
+       name="Retrospect Nederlandse Regionale zenders"
+       provider-name="Bas Rieter">
+
+    <!--requires-->
+        <!--import addon="net.rieter.xot" version="x.x.x" optional="false" /-->
+    <!--/requires-->
+
+    <extension point="xbmc.python.pluginsource"
+               library="">
+        <!--provides>video</provides-->
+    </extension>
+
+    <extension point="xbmc.addon.metadata">
+        <summary lang="en">Retrospect (a.k.a. XBMC Online TV) is an add-on that allows the playback of a lot of TV shows that are available (legally) via the broadcasters websites.</summary>
+        <description lang="en">A set of Dutch Regional channels for Retrospect</description>
+        <disclaimer lang="en">Retrospect is provided as is. We do not take any responsibility for possible (but highly unlikely) damage cause to your system. Nor do we take responsibility for the content that can be watched via this add-on.</disclaimer>
+        <language>nl</language>
+    </extension>
+</addon>
+
+<addon id="net.rieter.xot.channel.rtlnl"
+       version="4.1.7.2"
+       name="Retrospect Dutch RTL Channels"
+       provider-name="Bas Rieter">
+
+    <!--requires-->
+        <!--import addon="net.rieter.xot" version="x.x.x" optional="false" /-->
+    <!--/requires-->
+
+    <extension point="xbmc.python.pluginsource"
+               library="">
+        <!--provides>video</provides-->
+    </extension>
+
+    <extension point="xbmc.addon.metadata">
+        <summary lang="en">Retrospect (a.k.a. XBMC Online TV) is an add-on that allows the playback of a lot of TV shows that are available (legally) via the broadcasters websites.</summary>
+        <description lang="en">Set of Dutch RTL channels, RTL 4, 5, 7 &amp; 8 channels for Retrospect</description>
+        <disclaimer lang="en">Retrospect is provided as is. We do not take any responsibility for possible (but highly unlikely) damage cause to your system. Nor do we take responsibility for the content that can be watched via this add-on. Retrospect gaat altijd akkoord met het plaatsen van cookies door de rtl.nl website. Wilt u dit niet, dan moet u dit kanaal niet langer gebruiken binnen Retrospect. </disclaimer>
+        <language>nl</language>
+    </extension>
+</addon>
+
+<addon id="net.rieter.xot.channel.sbsnl"
+       version="4.1.7.6"
+       name="Retrospect Dutch SBS Broadcasting Channels"
+       provider-name="Bas Rieter">
+
+    <!--requires-->
+        <!--import addon="net.rieter.xot" version="x.x.x" optional="false" /-->
+    <!--/requires-->
+
+    <extension point="xbmc.python.pluginsource"
+               library="">
+        <!--provides>video</provides-->
+      </extension>
+
+    <extension point="xbmc.addon.metadata">
+        <summary lang="en">Retrospect (a.k.a. XBMC Online TV) is an add-on that allows the playback of a lot of TV shows that are available (legally) via the broadcasters websites.</summary>
+        <description lang="en">Set of Dutch SBS Broadcasting (SBS6, NET5 and Veronica) channels for Retrospect</description>
+        <disclaimer lang="en">Retrospect is provided as is. We do not take any responsibility for possible (but highly unlikely) damage cause to your system. Nor do we take responsibility for the content that can be watched via this add-on.</disclaimer>
+        <language>nl</language>
+    </extension>
+</addon>
+
+<addon id="net.rieter.xot.channel.se"
+       version="4.1.7.22"
+       name="Retrospect Swedish Channels"
+       provider-name="Bas Rieter">
+
+    <!--requires-->
+        <!--import  addon="net.rieter.xot" version="x.x.x" optional="false" /-->
+    <!--/requires-->
+
+    <extension point="xbmc.python.pluginsource"
+               library="">
+        <!--provides>video</provides-->
+    </extension>
+
+    <extension point="xbmc.addon.metadata">
+        <summary lang="en">Retrospect (a.k.a. XBMC Online TV) is an add-on that allows the playback of a lot of TV shows that are available (legally) via the broadcasters websites.</summary>
+        <description lang="en">Set of Swedish channels for Retrospect</description>
+        <disclaimer lang="en">Retrospect is provided as is. We do not take any responsibility for possible (but highly unlikely) damage cause to your system. Nor do we take responsibility for the content that can be watched via this add-on.</disclaimer>
+        <language>se</language>
+    </extension>
+</addon>
+
+<addon id="net.rieter.xot.channel.streams"
+       version="4.1.7.1"
+       name="Retrospect Stream collection for Radio and TV"
+       provider-name="Bas Rieter">
+
+    <!--requires-->
+        <!--import addon="net.rieter.xot" version="x.x.x" optional="false" /-->
+    <!--/requires-->
+
+    <extension point="xbmc.python.pluginsource"
+               library="">
+        <!--provides>video</provides-->
+      </extension>
+
+    <extension point="xbmc.addon.metadata">
+        <summary lang="en">Retrospect (a.k.a. XBMC Online TV) is an add-on that allows the playback of a lot of TV shows that are available (legally) via the broadcasters websites.</summary>
+        <description lang="en">Set of Dutch radio channels for Retrospect. These Radio channels are part of BigFoot87's stream collection and the TV channels are part of NL TV on Navi-X. Credits go to them.</description>
+        <disclaimer lang="en">Retrospect is provided as is. We do not take any responsibility for possible (but highly unlikely) damage cause to your system. Nor do we take responsibility for the content that can be watched via this add-on.</disclaimer>
+        <language>nl</language>
+    </extension>
+</addon>
+
+<addon id="net.rieter.xot.channel.uk"
+       version="4.1.7.0"
+       name="Retrospect British Channels"
+       provider-name="Bas Rieter">
+
+    <!--requires-->
+        <!--import addon="net.rieter.xot" version="x.x.x" optional="false" /-->
+    <!--/requires-->
+
+    <extension point="xbmc.python.pluginsource"
+               library="">
+        <!--provides>video</provides-->
+    </extension>
+
+    <extension point="xbmc.addon.metadata">
+        <summary lang="en">Retrospect (a.k.a. XBMC Online TV) is an add-on that allows the playback of a lot of TV shows that are available (legally) via the broadcasters websites.</summary>
+        <description lang="en">Set of UK related channels for Retrospect (BBC iPlayer).</description>
+        <disclaimer lang="en">Retrospect is provided as is. We do not take any responsibility for possible (but highly unlikely) damage cause to your system. Nor do we take responsibility for the content that can be watched via this add-on.</disclaimer>
+        <language>en</language>
+    </extension>
+</addon>
+
+<addon id="net.rieter.xot.channel.videos"
+       version="4.1.7.2"
+       name="Retrospect Video Websites"
+       provider-name="Bas Rieter">
+
+    <!--requires-->
+        <!--import addon="net.rieter.xot" version="x.x.x" optional="false" /-->
+    <!--/requires-->
+
+    <extension point="xbmc.python.pluginsource"
+               library="">
+        <!--provides>video</provides-->
+    </extension>
+
+    <extension point="xbmc.addon.metadata">
+        <summary lang="en">Retrospect (a.k.a. XBMC Online TV) is an add-on that allows the playback of a lot of TV shows that are available (legally) via the broadcasters websites.</summary>
+        <description lang="en">Set of several video websites channels for Retrospect</description>
+        <disclaimer lang="en">Retrospect is provided as is. We do not take any responsibility for possible (but highly unlikely) damage cause to your system. Nor do we take responsibility for the content that can be watched via this add-on.</disclaimer>
     </extension>
 </addon>
 
